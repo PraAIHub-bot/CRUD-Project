@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Error <%= typeof status !== 'undefined' ? status : '' %></title>
+</head>
+<body>
+  <main>
+    <h1>Something went wrong</h1>
+    <p data-testid="error-status">Status: <%= typeof status !== 'undefined' ? status : 'unknown' %></p>
+    <p data-testid="error-message"><%= typeof message !== 'undefined' ? message : 'An unexpected error occurred.' %></p>
+  </main>
+</body>
+</html>
