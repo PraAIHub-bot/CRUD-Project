@@ -1,5 +1,5 @@
 import express from 'express'
-import connectDB from './db/connectDB.js'
+import {connectDB} from './db/index.js'
 import {join} from 'path'
 import web from "./routes/web.js"
 
@@ -7,9 +7,11 @@ import dotenv from 'dotenv';
 
 // Load environment variables from .env file
 dotenv.config();
-const DATABASE_URL = process.env.DATABASE_URL || ""
 
-connectDB(DATABASE_URL);
+// Connect to MongoDB before any routes are mounted. The db module is
+// idempotent — repeated requires/imports do not trigger a reconnect.
+const MONGODB_URI = process.env.MONGODB_URI || process.env.DATABASE_URL || '';
+connectDB(MONGODB_URI);
 
 
 const app = express()
