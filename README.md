@@ -1,7 +1,7 @@
 # CRUD-Project — Student Management
 
 A small server-rendered Express app for managing students (name, age, fees) backed by MongoDB. Views are rendered with EJS; data is persisted via Mongoose. The repository is the subject of an ongoing wiring sprint — see [Project Status](#project-status) for context before contributing.
-
+#New Readme
 ---
 
 ## Table of Contents
